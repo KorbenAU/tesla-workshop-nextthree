@@ -8,9 +8,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "framer-motion": "^4.1.17",
     "next": "12.0.4",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.134.0",
+    "use-cannon": "^0.5.3"
   },
   "devDependencies": {
     "eslint": "7.32.0",
