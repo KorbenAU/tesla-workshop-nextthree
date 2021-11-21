@@ -15,7 +15,7 @@
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-three-fiber": "^6.0.13",
+    "react-three-fiber": "^5.1.5",
     "three": "^0.134.0",
     "use-cannon": "^0.5.3"
   },
