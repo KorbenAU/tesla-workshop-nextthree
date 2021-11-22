@@ -1,7 +1,8 @@
-import {Canvas, useFrame, extend, useThree} from "react-three-fiber";
+import {Canvas, extend, useFrame, useThree} from "react-three-fiber";
 import {Box, Container} from "@chakra-ui/react";
 import {useRef} from "react";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import * as THREE from "three";
 
 extend({OrbitControls});
 
@@ -16,14 +17,26 @@ export default function Home() {
         const boxRef = useRef();
 
         useFrame(state => {
-            boxRef.current.rotation.x += 0.01;
+            // boxRef.current.rotation.x += 0.01;
             boxRef.current.rotation.y += 0.01;
         });
 
         return (
-            <mesh castShadow receiveShadow ref={boxRef} {...props}>
+            <mesh castShadow
+                  // receiveShadow
+                  ref={boxRef}
+                  {...props}
+            >
                 <boxBufferGeometry/>
-                <meshPhysicalMaterial color={"blue"}/>
+                <meshPhysicalMaterial color={"white"}
+                    // opacity={0.7}
+                    // metalness={1}
+                                      transparent
+                                      roughness={0}
+                                      clearcoat={1}
+                                      transmission={0.7}
+                                      side={THREE.DoubleSide}
+                />
             </mesh>
         );
     };
@@ -47,19 +60,19 @@ export default function Home() {
 
     return (
         <Container maxW={"container.xl"}>
-            <Box h={"50rem"}>
+            <Box h={"100vh"}>
                 <Canvas style={{background: "gray"}}
                         shadowMap
                         camera={{
                             position: [3, 3, 3]
                         }}>
-                    <fog attach={'fog'} args={["white", 1, 2]}/>
+                    <fog attach={"fog"} args={["white", 10, 20]}/>
                     <OrbitController/>
                     <axesHelper args={[5]}/>
                     <ambientLight intensity={0.1}/>
                     <Bulb position={[0, 5, 0]}/>
-                    <TheCube position={[1, 2, 1]}/>
-                    <Floor position={[0, 0, 0]}/>
+                    <TheCube position={[0, 2, 0]}/>
+                    <Floor position={[0, -0.5, 0]}/>
                 </Canvas>
             </Box>
         </Container>
