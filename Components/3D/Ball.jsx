@@ -7,8 +7,8 @@ const Ball = (props) => {
     const texture = useLoader(THREE.TextureLoader, "/image/wood.jpg");
 
     useFrame(state => {
-        boxRef.current.rotation.x += 0.01;
-        boxRef.current.rotation.y += 0.01;
+        boxRef.current.rotation.x += 0.001;
+        boxRef.current.rotation.y += 0.001;
     });
 
     const handlePointerDown = (e) => {

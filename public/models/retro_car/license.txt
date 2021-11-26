@@ -1,0 +1,11 @@
+Model Information:
+* title:	Retro Car
+* source:	https://sketchfab.com/3d-models/retro-car-2836e72f327f4d6f9fe836d646496927
+* author:	pisarenok (https://sketchfab.com/pisarenok)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Retro Car" (https://sketchfab.com/3d-models/retro-car-2836e72f327f4d6f9fe836d646496927) by pisarenok (https://sketchfab.com/pisarenok) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

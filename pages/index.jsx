@@ -1,6 +1,7 @@
 import {Canvas, extend} from "react-three-fiber";
 import {Box, Container} from "@chakra-ui/react";
 import {Suspense} from "react";
+import {Physics} from "use-cannon";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import Orbit from "../Components/3D/Orbit";
 import Cube from "../Components/3D/Cube";
@@ -27,16 +28,18 @@ export default function Home() {
                     <axesHelper args={[5]}/>
                     <ambientLight intensity={0.1}/>
                     <Bulb position={[0, 5, 0]}/>
-                    <Dragable>
-                        <Suspense fallback={null}>
-                            <Cube position={[0, 2, 0]}/>
-                            <Ball position={[2, 2, 0]}/>
-                        </Suspense>
-                        <Suspense fallback={null}>
-                            <Background/>
-                        </Suspense>
-                    </Dragable>
-                    <Floor position={[0, -0.5, 0]}/>
+                    <Physics>
+                        <Dragable>
+                            <Suspense fallback={null}>
+                                <Cube position={[0, 2, 0]}/>
+                                <Ball position={[2, 2, 0]}/>
+                            </Suspense>
+                            <Suspense fallback={null}>
+                                <Background/>
+                            </Suspense>
+                        </Dragable>
+                        <Floor position={[0, 0, 0]} args={[20, 0.1, 20]}/>
+                    </Physics>
                 </Canvas>
             </Box>
         </Container>

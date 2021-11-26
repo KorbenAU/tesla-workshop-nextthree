@@ -21,6 +21,16 @@ const Dragable = ({children}) => {
         controlsRef.current.addEventListener("hoveroff", (e) => {
             scene.orbitControls.enabled = true;
         });
+        controlsRef.current.addEventListener("drag", (e) => {
+            e.object.api.position.copy(e.object.position);
+            e.object.api.velocity.set(0, 0, 0);
+        });
+        controlsRef.current.addEventListener("dragstart", (e) => {
+            e.object.api.mass.set(0);
+        });
+        controlsRef.current.addEventListener("dragend", (e) => {
+            e.object.api.mass.set(1);
+        });
     }, [childrenElements]);
 
     return (
